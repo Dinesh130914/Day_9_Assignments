@@ -1,12 +1,11 @@
 package com.bl.addressbook;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Contacts {
-	public static void Addressbook() 
+public class AddnewcontctUC2 {
+	public  void getdetails()
 	{
-		
-		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the Details :");
 		
@@ -21,16 +20,25 @@ public class Contacts {
 		System.out.println("Enter the zipcode");
 		String zipcode  = sc.next();
 		System.out.println("Enter the contact number");
-		long contctnum = sc.nextLong();
+		String contctnum = sc.next();
 		System.out.println("Enter the mail id");
 		String email = sc.next();
 		sc.close();
 		
-		System.out.println("FirstName :"+" "+fname+"\n"+"Lastename :"+" "+lname+"\n"+"Address"+" "+address+"\n"+"Statename :"+" "+state+"\n"+"Zipcode :"+zipcode+"\n"+"Contact Number :"+contctnum+"\n"+"Email Id :"+email);
-				
-	}
-	public static void main(String[] args)
-	{
-		Addressbook();
+		ArrayList<String> list = new ArrayList<>();
+		list.add(fname);
+		list.add(lname);
+		list.add(address);
+		list.add(state);
+		list.add(zipcode);
+		list.add(contctnum);
+		list.add(email);
+		
+		Object[] abjarr = list.toArray();
+		for (Object object : abjarr)
+		{
+			System.out.println((String)object);
+		}
+		System.out.println("Contact Added");
 	}
 }
